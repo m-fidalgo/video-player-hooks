@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import VideoContext from "./data/VideoContext";
+import VideoList from "./ui/VideoList";
+import NewVideoForm from "./ui/NewVideoForm";
+import VideoPlayer from "./ui/VideoPlayer";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <VideoContext>
+        <VideoPlayer />
+        <NewVideoForm />
+        <VideoList />
+      </VideoContext>
     </div>
   );
 }
